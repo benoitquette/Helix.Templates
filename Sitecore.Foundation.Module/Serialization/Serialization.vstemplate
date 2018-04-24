@@ -13,11 +13,12 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Hidden>true</Hidden>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Serialization.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
-      <Folder Name="Foundation.Module.Templates" TargetFolderName="Foundation.$ext_modulename$.Templates">
-        
+      <Folder Name="Foundation.Module.Templates" TargetFolderName="$ext_layer$.$ext_modulename$.Templates">
+        <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
       </Folder>
     </Project>
   </TemplateContent>

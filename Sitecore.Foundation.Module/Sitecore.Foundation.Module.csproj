@@ -66,6 +66,7 @@
     <None Include="code\Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Serialization\Foundation.Module.Templates\readme.txt" />
     <None Include="Template.ico" />
     <None Include="code\App_Config\Include\z.Foundation\Sitecore.Foundation.Module.Serialization.config">
       <SubType>Designer</SubType>
@@ -89,9 +90,7 @@
   <ItemGroup>
     <None Include="Serialization\Template.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Serialization\Foundation.Module.Templates\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="code\ProjectTemplate.csproj">
       <SubType>Designer</SubType>

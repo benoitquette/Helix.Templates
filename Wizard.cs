@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,35 +12,73 @@ namespace Helix.Templates
 {
     class Wizard : IWizard
     {
-        private DTE _dte;
+        private static DTE _dte;
+        private static Dictionary<string, string> parameters;
 
         public void BeforeOpeningFile(ProjectItem projectItem) { }
-        public void ProjectFinishedGenerating(Project project) { }
+
+        public void ProjectFinishedGenerating(Project project)
+        {
+            if (project != null)
+            {
+                MessageBox.Show(project.Name);
+                string moduleWebsiteFolderName = parameters["$modulewebsitefolder$"];
+                if (String.Compare(project.Name, moduleWebsiteFolderName) == 0)
+                {
+                    string newPath = Path.Combine(
+                        parameters["$destinationdirectory$"],
+                        moduleWebsiteFolderName,
+                        String.Concat(parameters["$modulefullname$"], ".csproj"));
+                    project.SaveAs(newPath);
+                }
+            }
+        }
+
         public void ProjectItemFinishedGenerating(ProjectItem projectItem) { }
-        public void RunFinished() { }
+
+        public void RunFinished()
+        {
+            // rename the code.csproj file
+            string moduleWebsiteFolderName = parameters["$modulewebsitefolder$"];
+            string currentPath = Path.Combine(
+                parameters["$destinationdirectory$"],
+                moduleWebsiteFolderName,
+                String.Concat(moduleWebsiteFolderName, ".csproj"));
+            string newPath = Path.Combine(
+                parameters["$destinationdirectory$"],
+                moduleWebsiteFolderName,
+                String.Concat(parameters["$modulefullname$"], ".csproj"));
+            File.Move(currentPath, newPath);
+        }
 
         public void RunStarted(
-            object automationObject, 
-            Dictionary<string, string> replacementsDictionary, 
-            WizardRunKind runKind, 
+            object automationObject,
+            Dictionary<string, string> replacementsDictionary,
+            WizardRunKind runKind,
             object[] customParams)
         {
             _dte = (DTE)automationObject;
 
-            replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}", 
+            replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
                 replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
             replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
 
-            StringBuilder dictionary = new StringBuilder();
-            foreach (string key in replacementsDictionary.Keys)
-            {
-                dictionary.AppendFormat("{0}: {1}{2}", key, replacementsDictionary[key], System.Environment.NewLine);
-            }
-            MessageBox.Show(dictionary.ToString());
-            //MessageBox.Show("Module name: " + replacementsDictionary["$modulename$"]);
-            //MessageBox.Show("Module name: " + replacementsDictionary["$modulefullname$"]);
+            parameters = new Dictionary<string, string>(replacementsDictionary);
         }
 
-        public bool ShouldAddProjectItem(string filePath) { return true; }
+        private static void ShowDictionary(Dictionary<string, string> dico)
+        {
+            StringBuilder dictionary = new StringBuilder();
+            foreach (string key in dico.Keys)
+            {
+                dictionary.AppendFormat("{0}: {1}{2}", key, dico[key], System.Environment.NewLine);
+            }
+            MessageBox.Show(dictionary.ToString());
+        }
+
+        public bool ShouldAddProjectItem(string filePath)
+        {
+            return true;
+        }
     }
 }
