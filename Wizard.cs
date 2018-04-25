@@ -26,7 +26,14 @@ namespace Helix.Templates
 
         public void RunFinished()
         {
-            
+            // rename the project folder to code
+            string currentPath = Path.Combine(
+                parameters["$destinationdirectory$"],
+                parameters["$modulefullname$"]);
+            string newPath = Path.Combine(
+                parameters["$destinationdirectory$"],
+                parameters["$modulewebsitefolder$"]);
+            Directory.Move(currentPath, newPath);
         }
 
         public void RunStarted(
@@ -36,11 +43,11 @@ namespace Helix.Templates
             object[] customParams)
         {
             _dte = (DTE)automationObject;
-            ShowDictionary(replacementsDictionary);
+            //ShowDictionary(replacementsDictionary);
 
-            //replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
-            //    replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
-            //replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
+            replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
+                replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
+            replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
         }

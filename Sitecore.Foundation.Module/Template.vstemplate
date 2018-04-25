@@ -23,12 +23,10 @@
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="$safeprojectname$">
-        <SolutionFolder Name="$modulewebsitefolder$">
-          <ProjectTemplateLink ProjectName="$modulewebsitefolder$" CopyParameters="true">code\Website.vstemplate</ProjectTemplateLink>
-        </SolutionFolder>
-        <SolutionFolder Name="Serialization">
-          <!--<ProjectTemplateLink ProjectName="Serialization" CopyParameters="true">Serialization\Serialization.vstemplate</ProjectTemplateLink>-->
-        </SolutionFolder>
+          <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\Website.vstemplate</ProjectTemplateLink>
+        <!--<SolutionFolder Name="Serialization">
+          --><!--<ProjectTemplateLink ProjectName="Serialization" CopyParameters="true">Serialization\Serialization.vstemplate</ProjectTemplateLink>--><!--
+        </SolutionFolder>-->
       </SolutionFolder>
     </ProjectCollection>
   </TemplateContent>

@@ -21,7 +21,7 @@
       <CustomParameter Name="$modulename$" Value="$safeprojectname$"/>
       <CustomParameter Name="$modulefullname$" Value="Sitecore.Foundation.$safeprojectname$"/>
     </CustomParameters>
-    <Project TargetFileName="$modulefullname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
+    <Project TargetFileName="Sitecore.Foundation.$safeprojectname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
       <Folder Name="App_Config" TargetFolderName="App_Config">
         <Folder Name="Include" TargetFolderName="Include">
           <Folder Name="z.Foundation" TargetFolderName="z.Foundation">

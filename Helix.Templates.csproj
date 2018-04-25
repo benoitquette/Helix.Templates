@@ -79,9 +79,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Sitecore.Foundation\Sitecore.Foundation.csproj">
-      <Project>{1A4585A1-0CAA-4AE1-BC8D-7BFE8D7095FC}</Project>
-      <Name>Sitecore.Foundation</Name>
+    <ProjectReference Include="Sitecore.Foundation.Module\Sitecore.Foundation.Module.csproj">
+      <Project>{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}</Project>
+      <Name>Sitecore.Foundation.Module</Name>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
