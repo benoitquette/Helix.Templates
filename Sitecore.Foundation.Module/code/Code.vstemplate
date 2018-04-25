@@ -19,8 +19,8 @@
     <Project TargetFileName="Sitecore.Foundation.$safeprojectname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
       <Folder Name="App_Config" TargetFolderName="App_Config">
         <Folder Name="Include" TargetFolderName="Include">
-          <Folder Name="z.Foundation" TargetFolderName="z.Foundation">
-            <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulefullname$.Serialization.config">Sitecore.Foundation.Module.Serialization.config</ProjectItem>
+          <Folder Name="z.Foundation" TargetFolderName="z.$ext_layer$">
+            <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulefullname$.Serialization.config">Serialization.config</ProjectItem>
           </Folder>
         </Folder>
       </Folder>

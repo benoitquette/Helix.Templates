@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>Sitecore Foundation Module</Name>
+    <Name>Sitecore Feature Module</Name>
     <Description>Sitecore Foundation Module</Description>
     <Icon>Template.ico</Icon>
     <ProjectType>CSharp</ProjectType>
@@ -18,15 +18,14 @@
   </TemplateData>
   <TemplateContent>
     <CustomParameters>
-      <CustomParameter Name="$layer$" Value="Foundation"/>
+      <CustomParameter Name="$layer$" Value="Feature"/>
       <CustomParameter Name="$modulewebsitefolder$" Value="code"/>
+      <CustomParameter Name="$ext_startcommentrenderings$" Value=""/>
+      <CustomParameter Name="$ext_endcommentrenderings$" Value=""/>
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="$safeprojectname$">
-          <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\Website.vstemplate</ProjectTemplateLink>
-        <!--<SolutionFolder Name="Serialization">
-          --><!--<ProjectTemplateLink ProjectName="Serialization" CopyParameters="true">Serialization\Serialization.vstemplate</ProjectTemplateLink>--><!--
-        </SolutionFolder>-->
+          <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\Code.vstemplate</ProjectTemplateLink>
       </SolutionFolder>
     </ProjectCollection>
   </TemplateContent>

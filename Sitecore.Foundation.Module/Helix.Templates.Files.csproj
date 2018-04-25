@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <VSTemplate Include="Feature.vstemplate">
+      <SubType>Designer</SubType>
+    </VSTemplate>
+    <VSTemplate Include="Project.vstemplate">
+      <SubType>Designer</SubType>
+    </VSTemplate>
     <Content Include="Properties\AssemblyInfo.cs" />
     <None Include="code\Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -68,14 +74,14 @@
   <ItemGroup>
     <Content Include="serialization\Foundation.Module.Templates\readme.txt" />
     <None Include="Template.ico" />
-    <None Include="code\App_Config\Include\z.Foundation\Sitecore.Foundation.Module.Serialization.config">
+    <None Include="code\App_Config\Include\z.Foundation\Serialization.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="code\packages.config" />
     <None Include="code\Views\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="Template.vstemplate">
+    <VSTemplate Include="Foundation.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
   </ItemGroup>
@@ -102,7 +108,7 @@
     <None Include="code\Template.ico" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="code\Website.vstemplate">
+    <VSTemplate Include="code\Code.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
   </ItemGroup>
