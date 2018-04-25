@@ -20,8 +20,8 @@
     <CustomParameters>
       <CustomParameter Name="$layer$" Value="Project"/>
       <CustomParameter Name="$modulewebsitefolder$" Value="code"/>
-      <CustomParameter Name="$ext_startcommentrenderings$" Value=""/>
-      <CustomParameter Name="$ext_endcommentrenderings$" Value=""/>
+      <CustomParameter Name="$startcommentrenderings$" Value=""/>
+      <CustomParameter Name="$endcommentrenderings$" Value=""/>
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="$safeprojectname$">
