@@ -9,7 +9,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}</ProjectGuid>
+    <ProjectGuid>{3723C2A3-D2A7-45E2-8243-512153BA541C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Foundation.Module</RootNamespace>
@@ -54,57 +54,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AssemblyInfo.cs" />
-    <None Include="code\Properties\AssemblyInfo.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="code\Properties\PublishProfiles\CustomProfile.pubxml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="code\Web.config" />
-    <None Include="code\Web.Debug.config" />
-    <None Include="code\Web.Release.config" />
+    <None Include="AssemblyInfo.cs" />
+    <None Include="App_Config\Include\z.Foundation\Sitecore.Foundation.Module.Serialization.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Views\web.config" />
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config" />
+    <None Include="Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Serialization\Foundation.Module.Templates\readme.txt" />
     <None Include="Template.ico" />
-    <None Include="code\App_Config\Include\z.Foundation\Sitecore.Foundation.Module.Serialization.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="code\packages.config" />
-    <None Include="code\Views\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="Template.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
+    <Content Include="ProjectTemplate.csproj" />
+    <Content Include="Website.vstemplate" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Serialization\ProjectTemplate.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="Serialization\Serialization.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Serialization\Template.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="code\Controllers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="code\ProjectTemplate.csproj">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="code\Template.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <VSTemplate Include="code\Website.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

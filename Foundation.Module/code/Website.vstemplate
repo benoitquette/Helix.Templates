@@ -13,7 +13,7 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Hidden>true</Hidden>
+    <Hidden>false</Hidden>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Sitecore.Foundation.$safeprojectname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">

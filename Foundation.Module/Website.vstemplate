@@ -13,14 +13,19 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Hidden>true</Hidden>
+    <Hidden>false</Hidden>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="Sitecore.Foundation.$safeprojectname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
+    <CustomParameters>
+      <CustomParameter Name="$layer$" Value="Foundation"/>
+      <CustomParameter Name="$modulename$" Value="Sitecore.$layer$.$safeprojectname$"/>
+      <CustomParameter Name="$modulefullname$" Value="Sitecore.$layer$.$modulename$"/>
+    </CustomParameters>
+    <Project TargetFileName="$modulefullname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
       <Folder Name="App_Config" TargetFolderName="App_Config">
         <Folder Name="Include" TargetFolderName="Include">
           <Folder Name="z.Foundation" TargetFolderName="z.Foundation">
-            <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulefullname$.Serialization.config">Sitecore.Foundation.Module.Serialization.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="modulefullname$.Serialization.config">Sitecore.Foundation.Module.Serialization.config</ProjectItem>
           </Folder>
         </Folder>
       </Folder>
@@ -33,6 +38,7 @@
           <ProjectItem ReplaceParameters="false" TargetFileName="CustomProfile.pubxml">CustomProfile.pubxml</ProjectItem>
         </Folder>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       <Folder Name="Views" TargetFolderName="Views">
         <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
       </Folder>

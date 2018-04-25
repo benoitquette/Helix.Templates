@@ -19,36 +19,14 @@ namespace Helix.Templates
 
         public void ProjectFinishedGenerating(Project project)
         {
-            if (project != null)
-            {
-                MessageBox.Show(project.Name);
-                string moduleWebsiteFolderName = parameters["$modulewebsitefolder$"];
-                if (String.Compare(project.Name, moduleWebsiteFolderName) == 0)
-                {
-                    string newPath = Path.Combine(
-                        parameters["$destinationdirectory$"],
-                        moduleWebsiteFolderName,
-                        String.Concat(parameters["$modulefullname$"], ".csproj"));
-                    project.SaveAs(newPath);
-                }
-            }
+            
         }
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem) { }
 
         public void RunFinished()
         {
-            // rename the code.csproj file
-            string moduleWebsiteFolderName = parameters["$modulewebsitefolder$"];
-            string currentPath = Path.Combine(
-                parameters["$destinationdirectory$"],
-                moduleWebsiteFolderName,
-                String.Concat(moduleWebsiteFolderName, ".csproj"));
-            string newPath = Path.Combine(
-                parameters["$destinationdirectory$"],
-                moduleWebsiteFolderName,
-                String.Concat(parameters["$modulefullname$"], ".csproj"));
-            File.Move(currentPath, newPath);
+            
         }
 
         public void RunStarted(
@@ -58,10 +36,11 @@ namespace Helix.Templates
             object[] customParams)
         {
             _dte = (DTE)automationObject;
+            ShowDictionary(replacementsDictionary);
 
-            replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
-                replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
-            replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
+            //replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
+            //    replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
+            //replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
         }
