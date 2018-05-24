@@ -1,4 +1,5 @@
 ﻿using EnvDTE;
+using EnvDTE80;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
@@ -8,24 +9,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Helix.Templates
+namespace Sitecore.Helix.Templates
 {
     class Wizard : IWizard
     {
-        private static DTE _dte;
+        private static DTE2 dte;
         private static Dictionary<string, string> parameters;
 
-        public void BeforeOpeningFile(ProjectItem projectItem) { }
-
-        public void ProjectFinishedGenerating(Project project)
+        public void BeforeOpeningFile(ProjectItem projectItem)
         {
-            
         }
 
-        public void ProjectItemFinishedGenerating(ProjectItem projectItem) { }
+        public void ProjectFinishedGenerating(EnvDTE.Project project)
+        {
+        }
+
+        public void ProjectItemFinishedGenerating(ProjectItem projectItem)
+        {
+        }
 
         public void RunFinished()
         {
+            Solution2 solution = (Solution2)dte.Solution;
+            Project project = null;
+            foreach (Project p in solution.Projects)
+            {
+                string name = p.Name;
+                if (String.Compare(p.Name, parameters["$projectname$"]) == 0)
+                {
+                    project = p;
+                }
+            }
+
+            // remove the created project from the solution
+            solution.Remove(project);
+
             // rename the project folder to code
             string currentPath = Path.Combine(
                 parameters["$destinationdirectory$"],
@@ -34,6 +52,12 @@ namespace Helix.Templates
                 parameters["$destinationdirectory$"],
                 parameters["$modulewebsitefolder$"]);
             Directory.Move(currentPath, newPath);
+
+            // add the new project to the solution and save it
+            Project folderProject = solution.AddSolutionFolder(parameters["$projectname$"]);
+            SolutionFolder solutionFolder = (SolutionFolder)folderProject.Object;
+            string projectFilePath = Path.Combine(newPath, String.Concat(parameters["$modulefullname$"], ".csproj"));
+            solutionFolder.AddFromFile(projectFilePath);
         }
 
         public void RunStarted(
@@ -42,7 +66,7 @@ namespace Helix.Templates
             WizardRunKind runKind,
             object[] customParams)
         {
-            _dte = (DTE)automationObject;
+            dte = (DTE2)automationObject;
             //ShowDictionary(replacementsDictionary);
 
             replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",

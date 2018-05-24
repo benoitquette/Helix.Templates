@@ -30,7 +30,7 @@
     </ProjectCollection>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>Helix.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8896e856cf3fdc7d</Assembly>
-    <FullClassName>Helix.Templates.Wizard</FullClassName>
+    <Assembly>Sitecore.Helix.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8896e856cf3fdc7d</Assembly>
+    <FullClassName>Sitecore.Helix.Templates.Wizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
