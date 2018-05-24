@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\z.$ext_layer$\Sitecore.$ext_layer$.$ext_modulename$.Serialization.config" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

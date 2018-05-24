@@ -64,9 +64,6 @@
     <None Include="code\Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="code\Properties\PublishProfiles\CustomProfile.pubxml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="code\Web.config" />
     <None Include="code\Web.Debug.config" />
     <None Include="code\Web.Release.config" />
