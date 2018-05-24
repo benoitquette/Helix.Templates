@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		..\.gitignore = ..\.gitignore
 		key.snk = key.snk
 		..\LICENSE = ..\LICENSE
-		..\README.md = ..\README.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates", "Templates\Templates.csproj", "{9EAB4CFE-E4E6-4F4D-B7C3-800D9BB59ACA}"
