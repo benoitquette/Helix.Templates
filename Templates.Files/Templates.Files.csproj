@@ -64,34 +64,25 @@
     <None Include="code\Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="code\Views\Module\.gitadd" />
     <None Include="code\Web.config" />
     <None Include="code\Web.Debug.config" />
     <None Include="code\Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="serialization\Foundation.Module.Templates\readme.txt" />
     <None Include="Template.ico" />
     <None Include="code\App_Config\Include\z.Foundation\Serialization.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="code\packages.config" />
-    <None Include="code\Views\web.config" />
+    <None Include="code\Views\web.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="Foundation.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="serialization\ProjectTemplate.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <VSTemplate Include="serialization\Serialization.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="serialization\Template.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\Controllers\" />

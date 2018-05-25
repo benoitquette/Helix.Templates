@@ -31,6 +31,9 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
       <Folder Name="Views" TargetFolderName="Views">
+        <Folder Name="Module" TargetFolderName="$safeprojectname$">
+          <ProjectItem ReplaceParameters="false" TargetFileName=".gitadd">.gitadd</ProjectItem>
+        </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
