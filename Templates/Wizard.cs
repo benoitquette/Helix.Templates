@@ -34,7 +34,6 @@ namespace Sitecore.Helix.Templates
             Project project = null;
             foreach (Project p in solution.Projects)
             {
-                string name = p.Name;
                 if (String.Compare(p.Name, parameters["$projectname$"]) == 0)
                 {
                     project = p;
@@ -67,13 +66,15 @@ namespace Sitecore.Helix.Templates
             object[] customParams)
         {
             dte = (DTE2)automationObject;
-            //ShowDictionary(replacementsDictionary);
-
+      
+            // create module names and layer params
             replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
                 replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
             replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
+
+            //ShowDictionary(replacementsDictionary);
         }
 
         private static void ShowDictionary(Dictionary<string, string> dico)
