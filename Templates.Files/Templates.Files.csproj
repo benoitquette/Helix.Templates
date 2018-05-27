@@ -60,6 +60,9 @@
     <VSTemplate Include="Project.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
+    <Content Include="icons\cubes_blue.png" />
+    <Content Include="icons\gear.png" />
+    <Content Include="icons\window.png" />
     <Content Include="Properties\AssemblyInfo.cs" />
     <None Include="code\Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -71,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Template.ico" />
-    <None Include="code\App_Config\Include\z.Foundation\Serialization.config">
+    <None Include="code\App_Config\Include\Layer\Serialization.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="code\packages.config" />

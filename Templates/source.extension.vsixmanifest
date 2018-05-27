@@ -3,7 +3,8 @@
     <Metadata>
         <Identity Id="Helix.Templates.cd1b0bbe-4d3c-4370-a884-ea19b20f0201" Version="1.0" Language="en-US" Publisher="Benoit Quette" />
         <DisplayName>Helix Templates for Sitecore</DisplayName>
-        <Description xml:space="preserve">Helix Templates for SitecoreHelix Templates for Sitecore</Description>
+        <Description xml:space="preserve">Helix Templates for Sitecore.</Description>
+        <Icon>sitecore-logo.png</Icon>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />

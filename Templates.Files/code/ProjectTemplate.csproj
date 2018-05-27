@@ -89,7 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\z.$ext_layer$\Sitecore.$ext_layer$.$ext_modulename$.Serialization.config" />
+    <Content Include="App_Config\Include\$ext_prefixedlayer$\Sitecore.$ext_layer$.$ext_modulename$.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

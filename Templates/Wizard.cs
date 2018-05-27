@@ -66,14 +66,14 @@ namespace Sitecore.Helix.Templates
             object[] customParams)
         {
             dte = (DTE2)automationObject;
-      
+
             // create module names and layer params
-            replacementsDictionary.Add("$modulefullname$", String.Format("Sitecore.{0}.{1}",
-                replacementsDictionary["$layer$"], replacementsDictionary["$safeprojectname$"]));
-            replacementsDictionary.Add("$modulename$", replacementsDictionary["$safeprojectname$"]);
+            string moduleName = replacementsDictionary["$safeprojectname$"];
+            string moduleFullName = String.Format("Sitecore.{0}.{1}", replacementsDictionary["$layer$"], moduleName);
+            replacementsDictionary.Add("$modulefullname$", moduleFullName);
+            replacementsDictionary.Add("$modulename$", moduleName);
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
-
             //ShowDictionary(replacementsDictionary);
         }
 

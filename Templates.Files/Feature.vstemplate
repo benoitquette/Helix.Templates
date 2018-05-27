@@ -3,7 +3,7 @@
   <TemplateData>
     <Name>Sitecore Feature Module</Name>
     <Description>Sitecore Foundation Module</Description>
-    <Icon>Template.ico</Icon>
+    <Icon>icons\gear.png</Icon>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <SortOrder>1000</SortOrder>
@@ -19,9 +19,14 @@
   <TemplateContent>
     <CustomParameters>
       <CustomParameter Name="$layer$" Value="Feature"/>
+      <CustomParameter Name="$prefixedlayer$" Value="zz.Feature"/>
       <CustomParameter Name="$modulewebsitefolder$" Value="code"/>
-      <CustomParameter Name="$startcommentrenderings$" Value=""/>
-      <CustomParameter Name="$endcommentrenderings$" Value=""/>
+      <CustomParameter Name="$sectionfoundationstart$" Value="&lt;!--"/>
+      <CustomParameter Name="$sectionfoundationend$" Value="--&gt;"/>
+      <CustomParameter Name="$sectionfeaturestart$" Value=""/>
+      <CustomParameter Name="$sectionfeatureend$" Value=""/>
+      <CustomParameter Name="$sectionprojectstart$" Value="&lt;!--"/>
+      <CustomParameter Name="$sectionprojectend$" Value="--&gt;"/>
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="$safeprojectname$">
