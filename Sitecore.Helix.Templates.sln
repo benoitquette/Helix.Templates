@@ -13,9 +13,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates", "Templates\Templates.csproj", "{9EAB4CFE-E4E6-4F4D-B7C3-800D9BB59ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates.Files", "Templates.Files\Templates.Files.csproj", "{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.Templates.Files", "Shared.Templates.Files\Shared.Templates.Files.shproj", "{B8A14421-7755-4A83-AFAC-B401B1BC2F08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "z.Foundation.Templates.Files", "z.Foundation.Templates.Files\z.Foundation.Templates.Files.csproj", "{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zz.Feature.Templates.Files", "zz.Feature.Templates.Files\zz.Feature.Templates.Files.csproj", "{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zzz.Project.Templates.Files", "zzz.Project.Templates.Files\zzz.Project.Templates.Files.csproj", "{2E35571F-CCD9-4106-B032-D7513CCE2376}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared.Templates.Files\Shared.Templates.Files.projitems*{b8a14421-7755-4a83-afac-b401b1bc2f08}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -29,6 +38,14 @@ Global
 		{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E35571F-CCD9-4106-B032-D7513CCE2376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E35571F-CCD9-4106-B032-D7513CCE2376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E35571F-CCD9-4106-B032-D7513CCE2376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E35571F-CCD9-4106-B032-D7513CCE2376}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

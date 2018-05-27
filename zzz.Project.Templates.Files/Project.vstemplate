@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Sitecore Project Module</Name>
+    <Description>Sitecore Foundation Module</Description>
+    <Icon>window.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>fb5061d3-7ef1-429e-af26-9015dee8726a</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Module</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Hidden>false</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <CustomParameters>
+      <CustomParameter Name="$layer$" Value="Project"/>
+      <CustomParameter Name="$prefixedlayer$" Value="zzz.Project"/>
+      <CustomParameter Name="$modulewebsitefolder$" Value="code"/>
+    </CustomParameters>
+    <ProjectCollection>
+      <SolutionFolder Name="$safeprojectname$">
+        <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\CodeProject.vstemplate</ProjectTemplateLink>
+      </SolutionFolder>
+      <SolutionFolder Name="serialization">
+        <SolutionFolder Name="$layer$.$safeprojectname$.Content">
+          
+        </SolutionFolder>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Sitecore.Helix.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8896e856cf3fdc7d</Assembly>
+    <FullClassName>Sitecore.Helix.Templates.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

@@ -79,19 +79,33 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Templates.Files\Templates.Files.csproj">
-      <Project>{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}</Project>
-      <Name>Templates.Files</Name>
-      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="sitecore-logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\z.Foundation.Templates.Files\z.Foundation.Templates.Files.csproj">
+      <Project>{B3CB162B-7F75-43DC-8C42-1FD44EC667A2}</Project>
+      <Name>z.Foundation.Templates.Files</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\zz.Feature.Templates.Files\zz.Feature.Templates.Files.csproj">
+      <Project>{98AC8378-2F10-4EF2-8A77-E08E5560E0AF}</Project>
+      <Name>zz.Feature.Templates.Files</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\zzz.Project.Templates.Files\zzz.Project.Templates.Files.csproj">
+      <Project>{2E35571F-CCD9-4106-B032-D7513CCE2376}</Project>
+      <Name>zzz.Project.Templates.Files</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

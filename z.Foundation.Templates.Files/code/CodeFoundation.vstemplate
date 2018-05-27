@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Sitecore Module Code</Name>
+    <Description>Template for the 'code' directory of a Sitecore Moduel</Description>
+    <!--<Icon>Template.ico</Icon>-->
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>eb5061d3-7ef1-429e-af26-9015dee8726a</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Module</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Hidden>true</Hidden>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_modulefullname$.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <Folder Name="App_Config" TargetFolderName="App_Config">
+        <Folder Name="Include" TargetFolderName="Include">
+          <Folder Name="z.Foundation" TargetFolderName="z.Foundation">
+            <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulefullname$.Serialization.config">Serialization.config</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers" />
+      <Folder Name="Models" TargetFolderName="Models" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <Folder Name="Module" TargetFolderName="$safeprojectname$" />
+        <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
