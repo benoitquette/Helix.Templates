@@ -32,13 +32,21 @@ namespace Sitecore.Helix.Templates
         {
             Solution2 solution = (Solution2)dte.Solution;
             Project project = null;
-            foreach (Project p in solution.Projects)
+
+            // when the solution is big, we arrive here before the new project is added.
+            // so let´s loop until it is added.
+            while (project == null)
             {
-                if (String.Compare(p.Name, parameters["$projectname$"]) == 0)
+                foreach (Project p in solution.Projects)
                 {
-                    project = p;
+                    if (String.Compare(p.Name, parameters["$projectname$"]) == 0)
+                    {
+                        project = p;
+                    }
                 }
+                System.Threading.Thread.Sleep(1000);
             }
+
 
             // remove the created project from the solution
             solution.Remove(project);
