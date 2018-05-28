@@ -27,9 +27,6 @@
         <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\CodeProject.vstemplate</ProjectTemplateLink>
       </SolutionFolder>
       <SolutionFolder Name="serialization">
-        <SolutionFolder Name="$layer$.$safeprojectname$.Content">
-          
-        </SolutionFolder>
       </SolutionFolder>
     </ProjectCollection>
   </TemplateContent>

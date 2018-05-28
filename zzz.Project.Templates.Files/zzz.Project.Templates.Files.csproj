@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="serialization\Project.Layouts\item.yml" />
+    <None Include="serialization\Project.Media\item.yml" />
+    <None Include="serialization\Project.Templates\item.yml" />
+    <None Include="serialization\ProjectTemplate.shproj">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="serialization\Serialization.vstemplate" />
     <VSTemplate Include="Project.vstemplate">
       <SubType>Designer</SubType>
@@ -80,6 +86,7 @@
   <ItemGroup>
     <Folder Include="code\Controllers\" />
     <Folder Include="code\Views\Shared\" />
+    <Folder Include="serialization\Project.Content\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="code\ProjectTemplate.csproj">

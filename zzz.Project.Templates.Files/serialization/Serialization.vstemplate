@@ -15,9 +15,18 @@
     <Hidden>true</Hidden>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="Serialization.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
-      <Folder Name="Foundation.Module.Templates" TargetFolderName="$ext_layer$.$ext_modulename$.Templates">
-        <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
+    <Project TargetFileName="Serialization.shproj" File="ProjectTemplate.shproj" ReplaceParameters="true">
+      <Folder Name="Project.Content" TargetFolderName="Project.$ext_modulename$.Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+      </Folder>
+      <Folder Name="Project.Layouts" TargetFolderName="Project.$ext_modulename$.Layouts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+      </Folder>
+      <Folder Name="Project.Media" TargetFolderName="Project.$ext_modulename$.Media">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+      </Folder>
+      <Folder Name="Project.Templates" TargetFolderName="Project.$ext_modulename$.Templates">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
       </Folder>
     </Project>
   </TemplateContent>
