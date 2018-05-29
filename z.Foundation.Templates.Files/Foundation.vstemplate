@@ -24,7 +24,8 @@
     </CustomParameters>
     <ProjectCollection>
       <SolutionFolder Name="$safeprojectname$">
-          <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\CodeFoundation.vstemplate</ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="Sitecore.$layer$.$modulename$" CopyParameters="true">code\CodeFoundation.vstemplate</ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="serialization" CopyParameters="true">serialization\Serialization.vstemplate</ProjectTemplateLink>
       </SolutionFolder>
     </ProjectCollection>
   </TemplateContent>

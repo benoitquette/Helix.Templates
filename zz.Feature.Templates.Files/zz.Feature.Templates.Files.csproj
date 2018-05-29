@@ -54,10 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="serialization\Feature.Renderings\item.yml" />
+    <None Include="serialization\Feature.Placeholders\item.yml" />
+    <None Include="serialization\Feature.Templates\item.yml" />
     <VSTemplate Include="code\CodeFeature.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
-    <Content Include="serialization\Serialization.vstemplate" />
+    <Content Include="serialization\ProjectTemplate.csproj">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="serialization\Serialization.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <VSTemplate Include="Feature.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
