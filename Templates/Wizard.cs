@@ -20,7 +20,7 @@ namespace Sitecore.Helix.Templates
         {
         }
 
-        public void ProjectFinishedGenerating(EnvDTE.Project project)
+        public void ProjectFinishedGenerating(Project project)
         {
         }
 
@@ -48,17 +48,37 @@ namespace Sitecore.Helix.Templates
             Directory.Move(currentPath, newPath);
 
             // add the new project to the solution and save it
-            Project folderProject = solution.AddSolutionFolder(parameters["$projectname$"]);
-            SolutionFolder solutionFolder = (SolutionFolder)folderProject.Object;
-            string projectFilePath = Path.Combine(newPath, String.Concat(parameters["$modulefullname$"], ".csproj"));
-            solutionFolder.AddFromFile(projectFilePath);
+            SolutionFolder layerFolder = GetLayerFolder(parameters["$layer$"], solution);
+            if (layerFolder == null)
+            {
+                throw new Exception(String.Format("Could not found the folder '´{0}' in the solution.", parameters["$layer$"]));
+            }
+            else
+            {
+                Project folderProject = layerFolder.AddSolutionFolder(parameters["$projectname$"]);
+                SolutionFolder solutionFolder = (SolutionFolder)folderProject.Object;
+                string projectFilePath = Path.Combine(newPath, String.Concat(parameters["$modulefullname$"], ".csproj"));
+                solutionFolder.AddFromFile(projectFilePath);
 
-            // delete serialization files and folders from disk
-            string serializationFolder = Path.Combine(parameters["$destinationdirectory$"], "serialization");
-            Directory.Delete(Path.Combine(serializationFolder, "bin"), true);
-            Directory.Delete(Path.Combine(serializationFolder, "obj"), true);
-            File.Delete(Path.Combine(serializationFolder, "serialization.csproj"));
-            File.Delete(Path.Combine(serializationFolder, "serialization.csproj.user"));
+                // delete serialization files and folders from disk
+                string serializationFolder = Path.Combine(parameters["$destinationdirectory$"], "serialization");
+                Directory.Delete(Path.Combine(serializationFolder, "bin"), true);
+                Directory.Delete(Path.Combine(serializationFolder, "obj"), true);
+                File.Delete(Path.Combine(serializationFolder, "serialization.csproj"));
+                File.Delete(Path.Combine(serializationFolder, "serialization.csproj.user"));
+            }
+        }
+
+        private static SolutionFolder GetLayerFolder(string layerName, Solution2 solution)
+        {
+            foreach (Project project in solution.Projects.OfType<Project>())
+            {
+                if (project.Name == layerName && project.Kind == ProjectKinds.vsProjectKindSolutionFolder)
+                {
+                    return (SolutionFolder)project.Object;
+                }
+            }
+            return null;
         }
 
         public void RunStarted(
@@ -85,7 +105,7 @@ namespace Sitecore.Helix.Templates
             StringBuilder dictionary = new StringBuilder();
             foreach (string key in dico.Keys)
             {
-                dictionary.AppendFormat("{0}: {1}{2}", key, dico[key], System.Environment.NewLine);
+                dictionary.AppendFormat("{0}: {1}{2}", key, dico[key], Environment.NewLine);
             }
             MessageBox.Show(dictionary.ToString());
         }
