@@ -31,22 +31,9 @@ namespace Sitecore.Helix.Templates
         public void RunFinished()
         {
             Solution2 solution = (Solution2)dte.Solution;
-            Project project = null;
-
-            // when the solution is big, we arrive here before the new project is added.
-            // so let´s loop until it is added.
-            while (project == null)
-            {
-                foreach (Project p in solution.Projects)
-                {
-                    if (String.Compare(p.Name, parameters["$projectname$"]) == 0)
-                    {
-                        project = p;
-                    }
-                }
-                System.Threading.Thread.Sleep(1000);
-            }
-
+            Project project = GetProject(
+                solution.Projects.OfType<Project>(), 
+                parameters["$projectname$"]);
 
             // remove the created project from the solution
             solution.Remove(project);
@@ -65,6 +52,13 @@ namespace Sitecore.Helix.Templates
             SolutionFolder solutionFolder = (SolutionFolder)folderProject.Object;
             string projectFilePath = Path.Combine(newPath, String.Concat(parameters["$modulefullname$"], ".csproj"));
             solutionFolder.AddFromFile(projectFilePath);
+
+            // delete serialization files and folders from disk
+            string serializationFolder = Path.Combine(parameters["$destinationdirectory$"], "serialization");
+            Directory.Delete(Path.Combine(serializationFolder, "bin"), true);
+            Directory.Delete(Path.Combine(serializationFolder, "obj"), true);
+            File.Delete(Path.Combine(serializationFolder, "serialization.csproj"));
+            File.Delete(Path.Combine(serializationFolder, "serialization.csproj.user"));
         }
 
         public void RunStarted(
@@ -80,6 +74,7 @@ namespace Sitecore.Helix.Templates
             string moduleFullName = String.Format("Sitecore.{0}.{1}", replacementsDictionary["$layer$"], moduleName);
             replacementsDictionary.Add("$modulefullname$", moduleFullName);
             replacementsDictionary.Add("$modulename$", moduleName);
+            replacementsDictionary.Add("$timestamp$", DateTime.Now.ToString("yyyyMMddThhmmssZ"));
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
             //ShowDictionary(replacementsDictionary);
@@ -98,6 +93,35 @@ namespace Sitecore.Helix.Templates
         public bool ShouldAddProjectItem(string filePath)
         {
             return true;
+        }
+
+        public static Project GetProject(IEnumerable<Project> projects, string name)
+        {
+            foreach (Project project in projects)
+            {
+                var projectName = project.Name;
+                if (projectName == name)
+                {
+                    return project;
+                }
+                else if (project.Kind == ProjectKinds.vsProjectKindSolutionFolder)
+                {
+                    var subProjects = project
+                        .ProjectItems
+                        .OfType<ProjectItem>()
+                        .Where(item => item.SubProject != null)
+                        .Select(item => item.SubProject);
+
+                    var projectInFolder = GetProject(subProjects, name);
+
+                    if (projectInFolder != null)
+                    {
+                        return projectInFolder;
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

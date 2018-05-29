@@ -57,10 +57,12 @@
     <None Include="serialization\Project.Layouts\item.yml" />
     <None Include="serialization\Project.Media\item.yml" />
     <None Include="serialization\Project.Templates\item.yml" />
-    <None Include="serialization\ProjectTemplate.shproj">
+    <Content Include="serialization\ProjectTemplate.csproj">
       <SubType>Designer</SubType>
-    </None>
-    <Content Include="serialization\Serialization.vstemplate" />
+    </Content>
+    <Content Include="serialization\Serialization.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <VSTemplate Include="Project.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
