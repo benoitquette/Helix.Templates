@@ -8,11 +8,3 @@ Languages:
 - Language: en
   Versions:
   - Version: 1
-    Fields:
-    - ID: "$guid4$"
-      Hint: __Created
-      Value: $ext_timestamp$
-    - ID: "$guid5$"
-      Hint: __Created by
-      Value: |
-        sitecore\admin

@@ -9,7 +9,17 @@
     <Import_RootNamespace>Shared.Templates.Files</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)code\" />
-    <Folder Include="$(MSBuildThisFileDirectory)serialization\jlkjkljl\" />
+    <Folder Include="$(MSBuildThisFileDirectory)serialization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)code\Properties\AssemblyInfo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)code\packages.config" />
+    <None Include="$(MSBuildThisFileDirectory)code\Web.config" />
+    <None Include="$(MSBuildThisFileDirectory)code\Web.Debug.config" />
+    <None Include="$(MSBuildThisFileDirectory)code\Web.Release.config" />
   </ItemGroup>
 </Project>

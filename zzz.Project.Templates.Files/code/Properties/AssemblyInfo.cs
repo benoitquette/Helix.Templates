@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("$ext_modulefullname$")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Benoit Quette")]
+[assembly: AssemblyCompany("$ext_userdisplayname$")]
 [assembly: AssemblyProduct("$ext_modulefullname$")]
-[assembly: AssemblyCopyright("Copyright © Benoit Quette 2018")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

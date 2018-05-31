@@ -3,6 +3,7 @@ using EnvDTE80;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices.AccountManagement;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -95,6 +96,7 @@ namespace Sitecore.Helix.Templates
             replacementsDictionary.Add("$modulefullname$", moduleFullName);
             replacementsDictionary.Add("$modulename$", moduleName);
             replacementsDictionary.Add("$timestamp$", DateTime.Now.ToString("yyyyMMddThhmmssZ"));
+            replacementsDictionary.Add("$userdisplayname$", UserPrincipal.Current.DisplayName);
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
             //ShowDictionary(replacementsDictionary);
