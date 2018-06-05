@@ -27,6 +27,7 @@
           <ProjectItem ReplaceParameters="true">Folder Templates.yml</ProjectItem>
           <ProjectItem ReplaceParameters="true">Interface Templates.yml</ProjectItem>
           <ProjectItem ReplaceParameters="true">Parameters Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Settings Templates.yml</ProjectItem>
         </Folder>
       </Folder>
     </Project>

@@ -57,6 +57,7 @@
     <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Folder Templates.yml" />
     <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Interface Templates.yml" />
     <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Parameters Templates.yml" />
+    <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Settings Templates.yml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

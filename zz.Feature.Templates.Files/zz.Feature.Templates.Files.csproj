@@ -58,6 +58,7 @@
     <None Include="serialization\Feature.Placeholders\item.yml" />
     <None Include="serialization\Feature.Templates\Feature\Folder Templates.yml" />
     <None Include="serialization\Feature.Templates\Feature\Interface Templates.yml" />
+    <None Include="serialization\Feature.Templates\Feature\Settings Templates.yml" />
     <None Include="serialization\Feature.Templates\Feature\Parameters Templates.yml" />
     <None Include="serialization\Feature.Templates\item.yml" />
     <VSTemplate Include="code\CodeFeature.vstemplate">
