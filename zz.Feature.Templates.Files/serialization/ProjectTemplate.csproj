@@ -53,6 +53,11 @@
     <Content Include="Feature.$ext_modulename$.Renderings\$ext_modulename$.yml" />
     <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$.yml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Folder Templates.yml" />
+    <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Interface Templates.yml" />
+    <Content Include="Feature.$ext_modulename$.Templates\$ext_modulename$\Parameters Templates.yml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

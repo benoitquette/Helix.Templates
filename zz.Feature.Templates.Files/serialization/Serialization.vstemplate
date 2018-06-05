@@ -23,6 +23,11 @@
       </Folder>
       <Folder Name="Feature.Templates" TargetFolderName="Feature.$ext_modulename$.Templates">
         <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+        <Folder Name="Feature" TargetFolderName="$ext_modulename$">
+          <ProjectItem ReplaceParameters="true">Folder Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Interface Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Parameters Templates.yml</ProjectItem>
+        </Folder>
       </Folder>
     </Project>
   </TemplateContent>
