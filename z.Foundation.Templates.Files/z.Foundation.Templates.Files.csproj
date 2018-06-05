@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="serialization\Foundation.Templates\item.yml" />
+    <None Include="serialization\Templates\Module\Folder Templates.yml" />
+    <None Include="serialization\Templates\Module\Interface Templates.yml" />
+    <None Include="serialization\Templates\item.yml" />
     <VSTemplate Include="code\CodeFoundation.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>

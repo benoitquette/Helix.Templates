@@ -54,9 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="serialization\Project.Layouts\item.yml" />
-    <None Include="serialization\Project.Media\item.yml" />
-    <None Include="serialization\Project.Templates\item.yml" />
+    <None Include="serialization\Layouts\item.yml" />
+    <None Include="serialization\Media\item.yml" />
+    <None Include="serialization\Templates\item.yml" />
     <Content Include="serialization\ProjectTemplate.csproj">
       <SubType>Designer</SubType>
     </Content>
@@ -70,8 +70,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="code\App_Config\Include\zzz.Project\Sitecore.Project.config" />
-    <None Include="serialization\Project.Templates\Project\Content Type Templates.yml" />
-    <None Include="serialization\Project.Templates\Project\Page Type Templates.yml" />
+    <None Include="serialization\Templates\Module\Content Type Templates.yml" />
+    <None Include="serialization\Templates\Module\Page Type Templates.yml" />
     <None Include="window.png" />
     <Content Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,7 +83,7 @@
   <ItemGroup>
     <Folder Include="code\Controllers\" />
     <Folder Include="code\Views\Shared\" />
-    <Folder Include="serialization\Project.Content\" />
+    <Folder Include="serialization\Content\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="code\ProjectTemplate.csproj">

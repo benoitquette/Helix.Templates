@@ -15,8 +15,12 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Serialization.csproj" File="ProjectTemplate.csproj" ReplaceParameters="true">
-      <Folder Name="Foundation.Templates" TargetFolderName="Foundation.$ext_modulename$.Templates">
+      <Folder Name="Templates" TargetFolderName="$ext_layer$.$ext_modulename$.Templates">
         <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+        <Folder Name="Module" TargetFolderName="$ext_modulename$">
+          <ProjectItem ReplaceParameters="true">Folder Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Interface Templates.yml</ProjectItem>
+        </Folder>
       </Folder>
     </Project>
   </TemplateContent>

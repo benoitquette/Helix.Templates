@@ -49,7 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Foundation.$ext_modulename$.Templates\$ext_modulename$.yml" />
+    <Content Include="$ext_layer$.$ext_modulename$.Templates\$ext_modulename$.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$ext_layer$.$ext_modulename$.Templates\$ext_modulename$\Folder Templates.yml" />
+    <Content Include="$ext_layer$.$ext_modulename$.Templates\$ext_modulename$\Interface Templates.yml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
