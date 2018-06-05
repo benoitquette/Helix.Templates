@@ -25,6 +25,10 @@
       </Folder>
       <Folder Name="Project.Templates" TargetFolderName="Project.$ext_modulename$.Templates">
         <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
+        <Folder Name="Project" TargetFolderName="$ext_modulename$">
+          <ProjectItem ReplaceParameters="true">Content Type Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Page Type Templates.yml</ProjectItem>
+        </Folder>
       </Folder>
     </Project>
   </TemplateContent>

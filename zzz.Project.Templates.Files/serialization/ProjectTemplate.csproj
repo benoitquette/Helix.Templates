@@ -54,6 +54,10 @@
     <Content Include="Project.$ext_modulename$.Media\$ext_modulename$.yml" />
     <Content Include="Project.$ext_modulename$.Templates\$ext_modulename$.yml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Project.$ext_modulename$.Templates\$ext_modulename$\Content Type Templates.yml" />
+    <Content Include="Project.$ext_modulename$.Templates\$ext_modulename$\Page Type Templates.yml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
