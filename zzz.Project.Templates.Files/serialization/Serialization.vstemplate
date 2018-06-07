@@ -26,7 +26,8 @@
       <Folder Name="Templates" TargetFolderName="$ext_layer$.$ext_modulename$.Templates">
         <ProjectItem ReplaceParameters="true" TargetFileName="$ext_modulename$.yml">item.yml</ProjectItem>
         <Folder Name="Module" TargetFolderName="$ext_modulename$">
-          <ProjectItem ReplaceParameters="true">Content Type Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Datasource Templates.yml</ProjectItem>
+          <ProjectItem ReplaceParameters="true">Folder Templates.yml</ProjectItem>
           <ProjectItem ReplaceParameters="true">Page Type Templates.yml</ProjectItem>
         </Folder>
       </Folder>
