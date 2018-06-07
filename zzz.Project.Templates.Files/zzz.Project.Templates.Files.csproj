@@ -70,7 +70,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="code\App_Config\Include\zzz.Project\Sitecore.Project.config" />
-    <None Include="serialization\Templates\Module\Content Type Templates.yml" />
+    <None Include="serialization\Templates\Module\Datasource Templates.yml" />
+    <None Include="serialization\Templates\Module\Folder Templates.yml" />
     <None Include="serialization\Templates\Module\Page Type Templates.yml" />
     <None Include="window.png" />
     <Content Include="Properties\AssemblyInfo.cs" />

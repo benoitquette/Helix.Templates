@@ -2,7 +2,7 @@
 ID: "$guid3$"
 Parent: "aad78eab-36a4-422f-8b67-b9a791b1a95d"
 Template: "7ee0975b-0698-493e-b3a2-0b2ef33d0522"
-Path: /sitecore/layout/Renderings/Feature/$ext_modulename$
+Path: /sitecore/layout/Renderings/$ext_layer$/$ext_modulename$
 DB: master
 Languages:
 - Language: en
