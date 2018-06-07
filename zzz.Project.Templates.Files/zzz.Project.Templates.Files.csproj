@@ -82,7 +82,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="code\Controllers\" />
     <Folder Include="code\Views\Shared\" />
     <Folder Include="serialization\Content\" />
   </ItemGroup>

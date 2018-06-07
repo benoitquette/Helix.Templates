@@ -74,9 +74,6 @@
     <Content Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="code\packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <VSTemplate Include="Foundation.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>

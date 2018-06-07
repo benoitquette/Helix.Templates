@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\Controllers\" />
+    <Folder Include="code\Models\" />
     <Folder Include="code\Views\Module\" />
   </ItemGroup>
   <ItemGroup>
