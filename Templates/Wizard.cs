@@ -39,13 +39,23 @@ namespace Sitecore.Helix.Templates
             // remove the created project from the solution
             solution.Remove(project);
 
-            // rename the project folder to code
-            string currentPath = Path.Combine(
-                parameters["$destinationdirectory$"],
-                parameters["$modulefullname$"]);
-            string newPath = Path.Combine(
-                parameters["$destinationdirectory$"],
-                parameters["$modulewebsitefolder$"]);
+            string destinationDir = parameters["$destinationdirectory$"];
+
+            // check that the project was created in the right path. If not, we move it
+            string properPath = Path.Combine(parameters["$solutiondirectory$"], "src", parameters["$layer$"], parameters["$safeprojectname$"]);
+            if (String.Compare(destinationDir, properPath) != 0)
+            {
+                Directory.Move(destinationDir, properPath);
+                destinationDir = properPath;
+
+                // notify the user that the destination dir was changed
+                string message = String.Format("To comply with the Helix guidlines, the module was installed in the folder '{0}'.", destinationDir);
+                MessageBox.Show(message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // rename the project folder to 'code'
+            string currentPath = Path.Combine(destinationDir, parameters["$modulefullname$"]);
+            string newPath = Path.Combine(destinationDir, parameters["$modulewebsitefolder$"]);
             Directory.Move(currentPath, newPath);
 
             // add the new project to the solution and save it
@@ -62,7 +72,7 @@ namespace Sitecore.Helix.Templates
                 solutionFolder.AddFromFile(projectFilePath);
 
                 // delete serialization files and folders from disk
-                string serializationFolder = Path.Combine(parameters["$destinationdirectory$"], "serialization");
+                string serializationFolder = Path.Combine(destinationDir, "serialization");
                 Directory.Delete(Path.Combine(serializationFolder, "bin"), true);
                 Directory.Delete(Path.Combine(serializationFolder, "obj"), true);
                 File.Delete(Path.Combine(serializationFolder, "serialization.csproj"));
@@ -100,6 +110,16 @@ namespace Sitecore.Helix.Templates
 
             parameters = new Dictionary<string, string>(replacementsDictionary);
             //ShowDictionary(replacementsDictionary);
+
+            //try
+            //{
+            //    WizardForm wizardForm = new WizardForm();
+            //    wizardForm.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
 
         private static void ShowDictionary(Dictionary<string, string> dico)
